@@ -28,6 +28,7 @@ class Signup extends Component {
             password: '',
             password_confirmation: '' 
         })
+        this.props.history.push(`/dashboard`);
     }
 
     render() {
