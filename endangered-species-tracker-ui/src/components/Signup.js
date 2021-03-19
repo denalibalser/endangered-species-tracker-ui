@@ -6,10 +6,10 @@ class Signup extends Component {
 
     state = {
         username: '',
-        firstName: '', 
-        lastName: '',
+        first_name: '', 
+        last_name: '',
         password: '',
-        passwordConfirmation: ''
+        password_confirmation: ''
     };
 
     handleOnChange = event => {
@@ -21,6 +21,13 @@ class Signup extends Component {
     handleOnSubmit = event => {
         event.preventDefault();
         this.props.signup(this.state)
+        this.setState({
+            username: '',
+            first_name: '', 
+            last_name: '', 
+            password: '',
+            password_confirmation: '' 
+        })
     }
 
     render() {
@@ -37,17 +44,17 @@ class Signup extends Component {
                     <br />
                     <label>First Name:</label>
                     <input 
-                    name="firstName"
+                    name="first_name"
                     onChange={this.handleOnChange} 
-                    value={this.state.firstName} 
+                    value={this.state.first_name} 
                     type="text"
                     />
                     <br />
                     <label>Last Name:</label>
                     <input 
-                    name="lastName"
+                    name="last_name"
                     onChange={this.handleOnChange} 
-                    value={this.state.lastName} 
+                    value={this.state.last_name} 
                     type="text"
                     />
                     <br />
@@ -61,9 +68,9 @@ class Signup extends Component {
                     <br />
                     <label>Confirm Password:</label>
                     <input 
-                    name="passwordConfirmation"
+                    name="password_confirmation"
                     onChange={this.handleOnChange} 
-                    value={this.state.passwordConfirmation} 
+                    value={this.state.password_confirmation} 
                     type="text"
                     />
                     <br />
