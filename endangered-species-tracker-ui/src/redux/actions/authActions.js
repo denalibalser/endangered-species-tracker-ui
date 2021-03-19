@@ -1,4 +1,4 @@
-export const signup = (user) => {
+export const signup = (user, history) => {
     return dispatch => {
         fetch(`http://localhost:3001/api/v1/users`, {
             method: 'POST',
@@ -15,5 +15,6 @@ export const signup = (user) => {
                 currentUser: data.user
             }
         }))
+        history.push(`/dashboard`) //now waits to redirect until promise is returned from api and resolved in action
     };
 };

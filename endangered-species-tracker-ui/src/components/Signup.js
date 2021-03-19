@@ -20,7 +20,7 @@ class Signup extends Component {
 
     handleOnSubmit = event => {
         event.preventDefault();
-        this.props.signup(this.state)
+        this.props.signup(this.state, this.props.history)
         this.setState({
             username: '',
             first_name: '', 
@@ -28,7 +28,6 @@ class Signup extends Component {
             password: '',
             password_confirmation: '' 
         })
-        this.props.history.push(`/dashboard`);
     }
 
     render() {

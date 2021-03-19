@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const Dashboard = props => {
-    return <h1>Welcome {props.username}</h1>;
+const Dashboard = ({ user }) => {
+    return <h1>Welcome {user.username}</h1>;
 }
 
 const mapStateToProps = state => {
     return {
-        username: state.auth.currentUser.username
+        user: state.auth.currentUser
     }
 }
 
