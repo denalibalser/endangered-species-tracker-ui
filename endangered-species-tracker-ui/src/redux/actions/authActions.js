@@ -9,14 +9,13 @@ export const signup = (user, history) => {
             body: JSON.stringify({user: user})
         })
         .then(resp => resp.json())
-        .then(data => dispatch({
+        .then(data => {
+            dispatch({
             type: 'AUTH_SUCCESS',
-            payload: {
-                loggedIn: data.logged_in,
-                currentUser: data.user
-            }
-        }))
-        history.push('/dashboard') //now waits to redirect until promise is returned from api and resolved in action
+            payload: { loggedIn: data.logged_in, currentUser: data.user },
+        });
+            history.push(`/dashboard`) //now waits to redirect until promise is returned from api and resolved in action
+        });
     };
 };
 
@@ -32,14 +31,13 @@ export const login = (user, history) => {
             body: JSON.stringify({user: user})
         })
         .then(resp => resp.json())
-        .then(data => dispatch({
+        .then(data => {
+            dispatch({
             type: 'AUTH_SUCCESS',
-            payload: {
-                loggedIn: data.logged_in,
-                currentUser: data.user
-            }
-        }))
-        history.push('/dashboard') //now waits to redirect until promise is returned from api and resolved in action
+            payload: { loggedIn: data.logged_in, currentUser: data.user },
+        });
+            history.push(`/dashboard`) //now waits to redirect until promise is returned from api and resolved in action
+        });
     };
 };
 
