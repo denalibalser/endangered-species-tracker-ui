@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 const Dashboard = ({ user }) => {
-    return <h1>Welcome {user.username}</h1>;
+    return <h1>Welcome {user.first_name}</h1>;
 }
 
 const mapStateToProps = state => {
