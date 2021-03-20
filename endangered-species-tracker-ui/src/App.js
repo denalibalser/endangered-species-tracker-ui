@@ -5,13 +5,25 @@ import  Dashboard  from './components/Dashboard'
 import Signup from './components/Signup'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
+import { checkLoggedIn } from './redux/actions/authActions'
+import { connect } from 'react-redux'
 
 
 class App extends React.Component {
+
+  componentDidMount() {
+    this.props.checkLoggedIn()
+  }
+
+  checkLoginStatus = () => {
+    
+  }
+
   render() {
     return (
       <div className="App">
         <Router>
+        <Navbar/>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/dashboard" component={Dashboard} /> {/* removed 'exact from route path */}
@@ -27,4 +39,4 @@ class App extends React.Component {
   }
   
 
-export default App;
+export default connect(null, { checkLoggedIn })(App);
