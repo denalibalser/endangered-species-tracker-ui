@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { login } from '../redux/actions/authActions'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
 
 class Login extends Component {
 
@@ -53,4 +52,4 @@ class Login extends Component {
     }
 }
 
-export default withRouter(connect(null, { login })(Login));
+export default connect(null, { login })(Login);
