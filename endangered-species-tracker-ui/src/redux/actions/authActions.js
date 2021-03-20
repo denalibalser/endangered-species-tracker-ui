@@ -65,7 +65,8 @@ export const logout = () => {
             method: 'DELETE',
             credentials: 'include'
         })
-        .then(resp => dispatch({type: 'LOGOUT'}))
+        .then(resp => resp.json())
+        .then(data => dispatch({type: 'LOGOUT'}))
         
         
     }    
