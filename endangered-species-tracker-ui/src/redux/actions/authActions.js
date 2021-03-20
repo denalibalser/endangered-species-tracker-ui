@@ -16,7 +16,7 @@ export const signup = (user, history) => {
                 currentUser: data.user
             }
         }))
-        history.push(`/dashboard`) //now waits to redirect until promise is returned from api and resolved in action
+        history.push('/dashboard') //now waits to redirect until promise is returned from api and resolved in action
     };
 };
 
@@ -39,7 +39,7 @@ export const login = (user, history) => {
                 currentUser: data.user
             }
         }))
-        history.push(`/dashboard`) //now waits to redirect until promise is returned from api and resolved in action
+        history.push('/dashboard') //now waits to redirect until promise is returned from api and resolved in action
     };
 };
 
@@ -59,14 +59,17 @@ export const checkLoggedIn = () => {
     }    
 }
 
-export const logout = () => {
+export const logout = (history) => {
     return dispatch => {
         fetch(`http://localhost:3001/api/v1/logout`, {
             method: 'DELETE',
             credentials: 'include'
         })
         .then(resp => resp.json())
-        .then(data => dispatch({type: 'LOGOUT'}))
+        .then(data => {
+            dispatch({type: 'LOGOUT'})
+            history.push('/login')
+        })
         
         
     }    
