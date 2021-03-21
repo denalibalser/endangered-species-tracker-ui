@@ -20,7 +20,6 @@ export const signup = (user, history) => {
 };
 
 export const login = (user, history) => {
-    //console.log(user)
     return dispatch => {
         fetch(`http://localhost:3001/api/v1/sessions`, {
             method: 'POST',
@@ -41,19 +40,24 @@ export const login = (user, history) => {
     };
 };
 
-export const checkLoggedIn = () => {
+export const checkLoggedIn = (callback) => {
     return dispatch => {
         fetch(`http://localhost:3001/api/v1/logged_in`, {
             credentials: 'include'
         })
         .then(resp => resp.json())
-        .then(data => dispatch({
-            type: 'AUTH_SUCCESS',
-            payload: {
-                loggedIn: data.logged_in,
-                currentUser: data.user
+        .then(data => 
+            {
+                dispatch({
+                    type: 'AUTH_SUCCESS',
+                    payload: {
+                        loggedIn: data.logged_in,
+                        currentUser: data.user
+                    }
+                })
+                callback();
             }
-        }))
+        )
     }    
 }
 

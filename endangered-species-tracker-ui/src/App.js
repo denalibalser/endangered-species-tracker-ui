@@ -11,11 +11,22 @@ import { Redirect } from 'react-router-dom';
 
 class App extends Component {
 
+  state = {
+    loading: true
+  }
+
+  toggleLoading = () => {
+    this.setState({
+      loading: !this.state.loading
+    })
+  }
+
   componentDidMount() {
-    this.props.checkLoggedIn()
+    this.props.checkLoggedIn(this.toggleLoading)
   }
 
   render() {
+    if(this.state.loading){ return <h1>Loading...</h1>} //can pull in loading spinner library and render here
     return (
       <div className="App">
         <Router>
