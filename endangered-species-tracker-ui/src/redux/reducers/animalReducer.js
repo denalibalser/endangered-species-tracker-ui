@@ -12,9 +12,9 @@ export default (state = {
                 loading: true
             }
         case 'FETCH_ALL_ANIMALS': 
-            return {
+              return {
                 ...state, 
-                endangered_animals: action.payload.animal, 
+                endangered_animals: action.payload.animal, //need to figure out where to incorporate uuid()
                 loading: false
             }
     

@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 export const fetchAllAnimals = () => {
     return dispatch => {
         dispatch({type: 'LOADING_ANIMALS'})
@@ -6,7 +8,7 @@ export const fetchAllAnimals = () => {
          .then(respJSON => 
             dispatch({
                 type: 'FETCH_ALL_ANIMALS', 
-                payload: {animal: respJSON.data.map(animal => animal)}
+                payload: {animal: respJSON.data.map(animal => animal.concat(uuidv4()))}
             })
         )
     }

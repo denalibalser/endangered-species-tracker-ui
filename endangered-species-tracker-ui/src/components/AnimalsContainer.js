@@ -10,19 +10,25 @@ class AnimalsContainer extends Component {
 
     }
 
-    render() {
-        return (
-           <div>
-               AnimalsContainer
-               <br/>
-               <button onClick={this.handleOnClick}>Fetch Animals</button>
-               {this.props.animals.map(animal => <Animal key={animal[1].url} animal={animal} loading={this.props.loading}/>)} 
 
-             
-           </div> 
-           
-           
-        )
+    render() {
+        if(this.props.loading === true){
+            return(
+                <div>
+                    <h1>Loading Endangered Animals...</h1>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    AnimalsContainer
+                    <br/>
+                    <button onClick={this.handleOnClick}>Fetch Animals</button>
+         
+                    {this.props.animals.map(animal => <Animal key={animal[5]} animal={animal}/>)} 
+                </div> 
+            )
+        }
     }
 }
 
