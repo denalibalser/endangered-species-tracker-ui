@@ -71,8 +71,6 @@ export const logout = (history) => {
         .then(data => {
             dispatch({type: 'LOGOUT'})
             history.push('/login')
-        })
-        
-        
+        })  
     }    
 }

@@ -11,7 +11,7 @@ import { Redirect } from 'react-router-dom';
 
 class App extends Component {
 
-  state = {
+  state = { //can move all of this loading logic to loading reducer so it can be reused
     loading: true
   }
 

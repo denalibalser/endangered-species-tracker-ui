@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react'
+//import { render } from 'react-dom'
 import { connect } from 'react-redux'
+import AnimalsContainer from './AnimalsContainer'
 
-const Dashboard = ({ user }) => {
-    return <h1>Welcome {user.first_name}</h1>;
+
+
+class Dashboard extends Component {
+    render() {
+        return (
+            <div>
+                <h1>Welcome {this.props.user.first_name}</h1>
+                <AnimalsContainer/>
+            </div> 
+        );
+    }
+    
 }
 
 const mapStateToProps = state => {
