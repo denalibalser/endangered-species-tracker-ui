@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
+import AnimalsContainer from './AnimalsContainer'
+
 
 class Home extends Component { //return to functional component??
     render() {
         return ( 
-            <h1>Home</h1>
+            <div>
+                <h1>Home</h1>
+                <AnimalsContainer />
+            </div>
+            
         )
     }
     

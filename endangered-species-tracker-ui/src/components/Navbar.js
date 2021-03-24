@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 class Navbar extends Component {
   render() {
     return (
-      <div>
+      <div id="navbar">
         <Link to="/">Home</Link>
         {this.props.loggedIn ? (
           <>

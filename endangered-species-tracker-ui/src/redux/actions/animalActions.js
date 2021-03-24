@@ -14,4 +14,32 @@ export const fetchAllAnimals = () => {
     }
 }
 
+export const saveAnimal = (animal) => {
+    return dispatch => {
+        fetch(`http://localhost:3001/api/v1/animal_cards`, {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json'
+            }, 
+            body: JSON.stringify({
+               animal_card: animal
+            })
+        })
+        .then(resp => resp.json())
+        .then(respJSON => dispatch({
+            type: 'SAVE_ANIMAL',
+            payload: { animalCard: respJSON.animal_card },
+        }))
+    }
+}
+
+export const fetchSavedAnimals = () => {
+    return dispatch => {
+        dispatch({type: 'LOADING_ANIMALS'})
+        fetch(`http://localhost:3001/api/v1/animal_cards`)
+        .then(resp => resp.json())
+        .then(respJSON => console.log(respJSON))
+    }
+}
+
 //incorporate loading action for when animals are being fetched 
