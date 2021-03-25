@@ -1,11 +1,14 @@
 import React from 'react'
-import { Animal } from './Animal'
-//want this component to render any Animals that the current_user has saved (to backend)
 
-const AnimalCard = () => {
+const AnimalCard = (props) => {
     return (
         <div>
-            <Animal/>
+            <ul>
+                <h2>{props.animal.common_name}</h2>
+                <li><strong>Scientific Name:</strong> {props.animal.scientific_name}</li>
+                <li><strong>Endangered Level:</strong> {props.animal.endangered_level}</li>
+                <li><a href={props.animal.url} target="_blank" rel="noopener noreferrer"><strong>More Information</strong></a></li>  
+            </ul>
         </div>
     )
 }

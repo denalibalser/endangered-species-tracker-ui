@@ -7,11 +7,9 @@ class AnimalsContainer extends Component {
 
     handleOnClick = () => {
         this.props.fetchAllAnimals();
-
     }
 
-
-    render() {
+    render() { 
         if(this.props.loading === true){
             return(
                 <div>
@@ -34,7 +32,7 @@ class AnimalsContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-        animals: state.animals.endangered_animals,
+        animals: state.animals.endangeredAnimals,
         loading: state.animals.loading
     }
 }

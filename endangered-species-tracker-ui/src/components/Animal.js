@@ -5,25 +5,24 @@ import { saveAnimal } from '../redux/actions/animalActions'
 class Animal extends Component {
 
     state = {
-        common_name: '',
-        scientific_name: '', 
-        endangered_level: '', 
+        commonName: '',
+        scientificName: '', 
+        endangeredLevel: '', 
         url: '', 
-        user_id: ''
+        userId: ''
     }
 
     componentDidMount() {
         this.setState({
-            common_name: this.props.animal[0], 
-            scientific_name: this.props.animal[1].value,
-            endangered_level: this.props.animal[2],
+            commonName: this.props.animal[0], 
+            scientificName: this.props.animal[1].value,
+            endangeredLevel: this.props.animal[2],
             url: this.props.animal[1].url, 
-            user_id: this.props.currentUser.id
+            userId: this.props.currentUser.id
         })
     }
 
     handleOnClick = () => {
-        console.log(this.props.history)
         this.props.saveAnimal(this.state);
     }
 

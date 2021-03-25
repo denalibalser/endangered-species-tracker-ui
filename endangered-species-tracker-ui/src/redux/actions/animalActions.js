@@ -22,23 +22,30 @@ export const saveAnimal = (animal) => {
                 'Content-Type': 'application/json'
             }, 
             body: JSON.stringify({
-               animal_card: animal
+               animalCard: animal
             })
         })
         .then(resp => resp.json())
-        .then(respJSON => dispatch({
+        .then(respJSON => {
+            dispatch({
             type: 'SAVE_ANIMAL',
             payload: { animalCard: respJSON.animal_card },
-        }))
+        })
+        })
     }
 }
 
-export const fetchSavedAnimals = () => {
+export const fetchSavedAnimals = (currentUserId) => {
     return dispatch => {
         dispatch({type: 'LOADING_ANIMALS'})
         fetch(`http://localhost:3001/api/v1/animal_cards`)
         .then(resp => resp.json())
-        .then(respJSON => console.log(respJSON))
+        .then(respJSON => { 
+            dispatch({
+            type: 'FETCH_SAVED_ANIMALS',
+            payload: {animalCard: respJSON.map(animalCard => animalCard), currentUserId: currentUserId}
+        })
+        })
     }
 }
 
