@@ -16,7 +16,7 @@ export default (state = {
                 loading: true
             }
         case 'FETCH_ALL_ANIMALS': 
-              return {
+               return {
                 ...state, 
                 endangeredAnimals: action.payload.animal, 
                 animalCards: [...state.animalCards],
@@ -27,12 +27,12 @@ export default (state = {
             return {
                 ...state, 
                 endangeredAnimals: [...state.endangeredAnimals],
-                animalCards: action.payload.animalCard,
+                animalCards: [...state.animalCards.concat(action.payload.animal_card)], //changed this from action.payload.animal_card
                 loading: false
             }
 
         case 'FETCH_SAVED_ANIMALS':
-            //return console.log(action.payload)
+            // return console.log(action.payload)
             //action.payload.animalCard.map(animal =>{if(animal.user_id === action.payload.currentUserId){
                 return  {
                     ...state, 

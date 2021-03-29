@@ -6,6 +6,9 @@ import Signup from './components/Signup'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
 import { checkLoggedIn } from './redux/actions/authActions'
+
+import { fetchAllAnimals } from './redux/actions/animalActions' //added this
+
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 
@@ -32,7 +35,8 @@ class App extends Component {
         <Router>
         <Navbar/>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" //use props.loggedIn to render different info on Home page here
+            component={Home} />
             <Route
               path="/dashboard"
               render={(props) => {
@@ -60,4 +64,4 @@ const mapStateToProps = state => {
   };
 };
   
-export default connect(mapStateToProps, { checkLoggedIn })(App);
+export default connect(mapStateToProps, { checkLoggedIn })(App); 

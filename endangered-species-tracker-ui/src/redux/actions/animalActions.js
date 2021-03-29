@@ -14,7 +14,7 @@ export const fetchAllAnimals = () => {
     }
 }
 
-export const saveAnimal = (animal) => {
+export const saveAnimal = (animal) => { 
     return dispatch => {
         fetch(`http://localhost:3001/api/v1/animal_cards`, {
             method: 'POST', 
@@ -22,7 +22,7 @@ export const saveAnimal = (animal) => {
                 'Content-Type': 'application/json'
             }, 
             body: JSON.stringify({
-               animalCard: animal
+               animal_card: animal
             })
         })
         .then(resp => resp.json())
@@ -31,11 +31,14 @@ export const saveAnimal = (animal) => {
             type: 'SAVE_ANIMAL',
             payload: { animalCard: respJSON.animal_card },
         })
+        //tried to call fetchSavedAnimals() here
         })
+        
+
     }
 }
 
-export const fetchSavedAnimals = (currentUserId) => {
+export const fetchSavedAnimals = (currentUserId) => { 
     return dispatch => {
         dispatch({type: 'LOADING_ANIMALS'})
         fetch(`http://localhost:3001/api/v1/animal_cards`)
@@ -43,10 +46,9 @@ export const fetchSavedAnimals = (currentUserId) => {
         .then(respJSON => { 
             dispatch({
             type: 'FETCH_SAVED_ANIMALS',
-            payload: {animalCard: respJSON.map(animalCard => animalCard), currentUserId: currentUserId}
+            payload: {animalCard: respJSON.map(animal_card => animal_card), currentUserId: currentUserId} 
         })
         })
     }
 }
 
-//incorporate loading action for when animals are being fetched 

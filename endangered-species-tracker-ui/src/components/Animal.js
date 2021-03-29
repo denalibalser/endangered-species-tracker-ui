@@ -1,35 +1,37 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { saveAnimal } from '../redux/actions/animalActions'
+import { fetchSavedAnimals } from '../redux/actions/animalActions'
 
 class Animal extends Component {
 
     state = {
-        commonName: '',
-        scientificName: '', 
-        endangeredLevel: '', 
+        common_name: '',
+        scientific_name: '', 
+        endangered_level: '', 
         url: '', 
-        userId: ''
+        user_id: ''
     }
 
     componentDidMount() {
         this.setState({
-            commonName: this.props.animal[0], 
-            scientificName: this.props.animal[1].value,
-            endangeredLevel: this.props.animal[2],
+            common_name: this.props.animal[0], 
+            scientific_name: this.props.animal[1].value,
+            endangered_level: this.props.animal[2],
             url: this.props.animal[1].url, 
-            userId: this.props.currentUser.id
+            user_id: this.props.currentUser.id
         })
     }
 
     handleOnClick = () => {
         this.props.saveAnimal(this.state);
+        this.props.fetchSavedAnimals(this.props.currentUser.id) 
     }
 
 
     render() {
         return (
-            <div className="animal-card">
+            <div className="animal">
                 <h1>{this.props.animal[0]}</h1>
                 <li><strong>Scientific Name:</strong> {this.props.animal[1].value}</li>
                 <li><strong>Endangered Level:</strong> {this.props.animal[2]}</li>
@@ -46,4 +48,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { saveAnimal })(Animal);
+export default connect(mapStateToProps, { saveAnimal, fetchSavedAnimals })(Animal);

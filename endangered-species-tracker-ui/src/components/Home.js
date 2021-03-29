@@ -1,15 +1,26 @@
 import React, { Component } from 'react'
-import AnimalsContainer from './AnimalsContainer'
+// import AnimalsContainer from './AnimalsContainer'
+import SearchPage from './SearchPage'
+// import { connect } from 'react-redux'
+import { fetchAllAnimals } from '../redux/actions/animalActions'
 
 
 class Home extends Component { //return to functional component??
+
+    // componentDidMount() {
+    //     this.props.fetchAllAnimals();
+    // }
+
     render() {
         
         return ( 
             <div>
                 <h1>Home</h1>
                 {/* need a search-bar component - which will then render AnimalsContainer component that renders the Animal components for the animals that match the search */}
-                <AnimalsContainer />
+                {/* <AnimalsContainer /> */}
+
+                <SearchPage/>
+
             </div>
             
         )
@@ -18,3 +29,4 @@ class Home extends Component { //return to functional component??
 }
 
 export default Home;
+//connect(null, { fetchAllAnimals })(Home);
