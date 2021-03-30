@@ -32,38 +32,21 @@ export default (state = {
             }
 
         case 'FETCH_SAVED_ANIMALS':
-            // return console.log(action.payload)
-            //action.payload.animalCard.map(animal =>{if(animal.user_id === action.payload.currentUserId){
-                return  {
-                    ...state, 
-                    endangeredAnimals: [...state.endangeredAnimals],
-                    animalCards: action.payload.animalCard,
-                    loading: false
-                }
-             //else{
-            //     return {
-            //         ...state, 
-            //         endangered_animals: [...state.endangered_animals],
-            //         animal_cards: [...state.animal_cards],
-            //         loading: false
-            //     }
-            // }})
-            // if(action.payload.animal_card.user_id === action.payload.current_user_id) {
-            //     return {
-            //         ...state, 
-            //         endangered_animals: [...state.endangered_animals],
-            //         animal_cards: [...state.animal_cards.concat(action.payload.animal_card)], //action.payload.animal_card,//
-            //         loading: false
-            //     } 
-            // } else {
-            //     return {
-            //         ...state, 
-            //         endangered_animals: [...state.endangered_animals],
-            //         animal_cards: [...state.animal_cards],
-            //         loading: false
-            //     }
-            // }
-             
+            return  {
+                ...state, 
+                endangeredAnimals: [...state.endangeredAnimals],
+                animalCards: action.payload.animalCard,
+                loading: false
+            }
+        
+        case 'REMOVE_ANIMAL':
+            return {
+                ...state, 
+                endangeredAnimals: [...state.endangeredAnimals],
+                animalCards: state.animalCards.filter(animalCard => animalCard.id !== action.payload.animalCard.id),
+                loading: false
+            }
+           
 
         default: 
         return state;

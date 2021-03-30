@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchSavedAnimals } from '../redux/actions/animalActions'
+import { removeAnimal } from '../redux/actions/animalActions'
 import  AnimalCard  from './AnimalCard'
 
 class Dashboard extends Component {
@@ -16,7 +17,7 @@ class Dashboard extends Component {
                 <h1>Welcome {this.props.user.first_name}</h1>
                 {this.props.userAnimalCards.map(animalCard => {
                     if(animalCard.user.id === this.props.user.id) {
-                        return <AnimalCard key={animalCard.id} animal={animalCard}/>
+                        return <AnimalCard key={animalCard.id} animal={animalCard} remove={this.props.removeAnimal}/>
                     }})
                 }     
             </div> 
@@ -32,4 +33,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {fetchSavedAnimals})(Dashboard);
+export default connect(mapStateToProps, {fetchSavedAnimals, removeAnimal})(Dashboard);

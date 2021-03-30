@@ -36,7 +36,7 @@ class Animal extends Component {
                 <li><strong>Scientific Name:</strong> {this.props.animal[1].value}</li>
                 <li><strong>Endangered Level:</strong> {this.props.animal[2]}</li>
                 <li><a href={this.props.animal[1].url} target="_blank" rel="noopener noreferrer"><strong>More Information</strong></a></li>
-                <button onClick={this.handleOnClick}>Save Animal To Dashboard</button>
+                <button onClick={this.handleOnClick}>Save Species To Dashboard</button>
             </div>
         )
     }  

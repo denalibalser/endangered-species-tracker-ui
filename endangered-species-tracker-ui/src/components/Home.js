@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import AnimalsContainer from './AnimalsContainer'
 import SearchPage from './SearchPage'
 // import { connect } from 'react-redux'
-import { fetchAllAnimals } from '../redux/actions/animalActions'
+// import { fetchAllAnimals } from '../redux/actions/animalActions'
 
 
 class Home extends Component { //return to functional component??

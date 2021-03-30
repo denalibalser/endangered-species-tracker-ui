@@ -15,12 +15,6 @@ class SearchBar extends Component {
         })
     }
 
-    // loadSpecies = () => {
-    //     this.setState({
-    //         data: this.props.species
-    //     })
-    // }
-
     handleOnChange = event => {
         const query = event.target.value
         this.setState({
@@ -29,31 +23,29 @@ class SearchBar extends Component {
             filteredData: this.state.data.filter(element => {
                 if(query !== '') {
                     return element[0].charAt(0).toLowerCase().includes(query.toLowerCase())
+                    // element[0].charAt(0).toLowerCase().includes(query.toLowerCase())
                 }
             })
         })
     }
 
-    render(){
+    render(){ 
         const BarStyling = {width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"};
         console.log(this.state)
         
-            return (
-                <>
-                    <input 
-                        // onLoad={this.loadSpecies}
-                        style={BarStyling}
-                        key="random1"
-                        value={this.state.query}
-                        placeholder={"search endangered species"}
-                        onChange={this.handleOnChange}
-                    />
-                    <SpeciesSearchResults results={this.state.filteredData} />
-                </>
-            )
-        
+        return (
+            <>
+                <input 
+                    style={BarStyling}
+                    key="random1"
+                    value={this.state.query}
+                    placeholder={"search endangered species"}
+                    onChange={this.handleOnChange}
+                />
+                <SpeciesSearchResults results={this.state.filteredData} />
+            </>
+        ) 
     }
-    
 }
 
 export default SearchBar; 

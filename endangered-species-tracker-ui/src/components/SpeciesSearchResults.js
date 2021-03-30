@@ -8,7 +8,7 @@ const SpeciesSearchResults = ({ results=[] }) => {
                 { results.map((data) => {
                     if (data) {
                         return (
-                            <Animal key={data.id} animal={data}/>
+                            <Animal key={data[5]} animal={data}/>
     	                )	
     	            }
                     return null

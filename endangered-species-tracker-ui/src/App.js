@@ -6,9 +6,6 @@ import Signup from './components/Signup'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
 import { checkLoggedIn } from './redux/actions/authActions'
-
-import { fetchAllAnimals } from './redux/actions/animalActions' //added this
-
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 

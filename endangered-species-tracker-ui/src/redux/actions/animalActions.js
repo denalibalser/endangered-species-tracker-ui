@@ -31,7 +31,6 @@ export const saveAnimal = (animal) => {
             type: 'SAVE_ANIMAL',
             payload: { animalCard: respJSON.animal_card },
         })
-        //tried to call fetchSavedAnimals() here
         })
         
 
@@ -50,5 +49,26 @@ export const fetchSavedAnimals = (currentUserId) => {
         })
         })
     }
+}
+
+export const removeAnimal = (id) => {
+    return dispatch => {
+        fetch(`http://localhost:3001/api/v1/animal_cards/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }}).then(resp => resp.json())
+            .then(respJSON => {
+                dispatch({
+                    type: 'REMOVE_ANIMAL',
+                    payload: {animalCard: respJSON.animal_card}
+                })
+            }) 
+            
+    
+        }
+
+        
+    
 }
 

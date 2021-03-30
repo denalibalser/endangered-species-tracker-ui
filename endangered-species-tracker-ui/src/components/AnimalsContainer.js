@@ -5,10 +5,6 @@ import Animal from './Animal'
 
 class AnimalsContainer extends Component {
 
-    handleOnClick = () => {
-        this.props.fetchAllAnimals();
-    }
-
     render() { 
         if(this.props.loading === true){
             return(
@@ -19,10 +15,6 @@ class AnimalsContainer extends Component {
         } else {
             return (
                 <div>
-                    AnimalsContainer
-                    <br/>
-                    <button onClick={this.handleOnClick}>Fetch Animals</button>
-         
                     {this.props.animals.map(animal => <Animal key={animal[5]} animal={animal}/>)} 
                 </div> 
             )
