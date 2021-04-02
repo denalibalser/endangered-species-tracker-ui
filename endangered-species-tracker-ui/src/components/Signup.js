@@ -32,51 +32,66 @@ class Signup extends Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleOnSubmit}>
-                    <label>Username:</label>
-                    <input 
-                    name="username"
-                    onChange={this.handleOnChange} 
-                    value={this.state.username} 
-                    type="text"
-                    />
-                    <br />
-                    <label>First Name:</label>
-                    <input 
-                    name="first_name"
-                    onChange={this.handleOnChange} 
-                    value={this.state.first_name} 
-                    type="text"
-                    />
-                    <br />
-                    <label>Last Name:</label>
-                    <input 
-                    name="last_name"
-                    onChange={this.handleOnChange} 
-                    value={this.state.last_name} 
-                    type="text"
-                    />
-                    <br />
-                    <label>Password:</label>
-                    <input 
-                    name="password"
-                    onChange={this.handleOnChange} 
-                    value={this.state.password} 
-                    type="text"
-                    />
-                    <br />
-                    <label>Confirm Password:</label>
-                    <input 
-                    name="password_confirmation"
-                    onChange={this.handleOnChange} 
-                    value={this.state.password_confirmation} 
-                    type="text"
-                    />
-                    <br />
-                    <button className="btn" type="submit">Signup</button>
-                    <br />
-                </form>
+            <div className="flex h-screen">
+                <div className="w-full max-w-xs m-auto bg-indigo-100 rounded p-5">
+                    <header>
+                        <img class="w-20 mx-auto mb-5" src="https://img.icons8.com/fluent/344/year-of-tiger.png" />
+                    </header>
+
+                    <form onSubmit={this.handleOnSubmit}>
+                        <div>
+                            <label className="block mb-2 text-indigo-500" for="username">Username</label>
+                            <input 
+                                className="w-full p-2 mb-6 text-indigo-700 border-b-2 border-indigo-500 outline-none focus:bg-gray-300"
+                                name="username"
+                                onChange={this.handleOnChange} 
+                                value={this.state.username} 
+                                type="text"
+                            />
+                        </div>
+                        <div>
+                            <label className="block mb-2 text-indigo-500" for="first_name">First Name</label>
+                            <input 
+                                className="w-full p-2 mb-6 text-indigo-700 border-b-2 border-indigo-500 outline-none focus:bg-gray-300"
+                                name="first_name"
+                                onChange={this.handleOnChange} 
+                                value={this.state.first_name} 
+                                type="text"
+                            />
+                        </div>
+                        <div>
+                            <label className="block mb-2 text-indigo-500" for="last_name">Last Name</label>
+                            <input 
+                                className="w-full p-2 mb-6 text-indigo-700 border-b-2 border-indigo-500 outline-none focus:bg-gray-300"
+                                name="last_name"
+                                onChange={this.handleOnChange} 
+                                value={this.state.last_name} 
+                                type="text"
+                            />
+                        </div>
+                        <div>
+                            <label className="block mb-2 text-indigo-500" for="password">Password</label>
+                            <input 
+                                className="w-full p-2 mb-6 text-indigo-700 border-b-2 border-indigo-500 outline-none focus:bg-gray-300"
+                                name="password"
+                                onChange={this.handleOnChange} 
+                                value={this.state.password} 
+                                type="text"
+                            />
+                        </div>
+                        <div>
+                            <label className="block mb-2 text-indigo-500" for="password_confirmation">Confirm Password</label>
+                            <input 
+                                className="w-full p-2 mb-6 text-indigo-700 border-b-2 border-indigo-500 outline-none focus:bg-gray-300"
+                                name="password_confirmation"
+                                onChange={this.handleOnChange} 
+                                value={this.state.password_confirmation} 
+                                type="text"
+                            />
+                        </div>
+                        <button className="btn" type="submit">Signup</button>            
+                    </form>
+                </div>
             </div>
         )
     }
