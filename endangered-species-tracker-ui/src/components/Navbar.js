@@ -5,28 +5,43 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 class Navbar extends Component {
-  render() {
-    return (
-            <nav id="navbar">
-                <ul id="navbar-ul">
-                    <li><Link to="/">Home</Link></li>
-                    {this.props.loggedIn ? (
-                    <>
-                        <li><Link to="/dashboard">Dashboard</Link></li>
-                        <li><Link to="#" onClick={() => this.props.logout(this.props.history)}>
-                        Logout
-                        </Link></li>
-                    </>
-                    ) : (
-                    <>
-                        <li><Link to="/signup">Signup</Link></li>
-                        <li><Link to="/login">Login</Link></li>
-                    </>
-                    )}
-                </ul>
+    render() {
+        return (
+            <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+                <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+                    <div class="text-sm lg:flex-grow">
+                        <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                            <Link to="/">Home</Link>
+                        </a>
+                        {this.props.loggedIn ? (
+                            <>
+                                <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                                    <Link to="/dashboard">Dashboard</Link>
+                                </a>
+                                <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                                    <Link to="#" onClick={() => this.props.logout(this.props.history)}>
+                                        Logout
+                                    </Link>
+                                </a>
+                            </>
+                        ) : (
+                            <>
+                                <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                                    <Link to="/signup">Signup</Link>
+                                </a>
+                                <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                                    <Link to="/login">Login</Link>
+                                </a>
+                            </>
+                        )}
+
+                   
+                    </div>
+                </div>
+                
             </nav>
-    );
-  }
+        );
+    }
 }
 
 const mapStateToProps = (state) => {
