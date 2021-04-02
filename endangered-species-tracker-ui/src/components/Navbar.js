@@ -7,22 +7,24 @@ import { withRouter } from 'react-router-dom';
 class Navbar extends Component {
   render() {
     return (
-      <div id="navbar">
-        <Link to="/">Home</Link>
-        {this.props.loggedIn ? (
-          <>
-            <Link to="/dashboard">Dashboard</Link>
-            <Link to="#" onClick={() => this.props.logout(this.props.history)}>
-              Logout
-            </Link>
-          </>
-        ) : (
-          <>
-            <Link to="/signup">Signup</Link>
-            <Link to="/login">Login</Link>
-          </>
-        )}
-      </div>
+            <nav id="navbar">
+                <ul id="navbar-ul">
+                    <li><Link to="/">Home</Link></li>
+                    {this.props.loggedIn ? (
+                    <>
+                        <li><Link to="/dashboard">Dashboard</Link></li>
+                        <li><Link to="#" onClick={() => this.props.logout(this.props.history)}>
+                        Logout
+                        </Link></li>
+                    </>
+                    ) : (
+                    <>
+                        <li><Link to="/signup">Signup</Link></li>
+                        <li><Link to="/login">Login</Link></li>
+                    </>
+                    )}
+                </ul>
+            </nav>
     );
   }
 }

@@ -74,7 +74,7 @@ class Signup extends Component {
                     type="text"
                     />
                     <br />
-                    <button type="submit">Signup</button>
+                    <button className="btn" type="submit">Signup</button>
                     <br />
                 </form>
             </div>
