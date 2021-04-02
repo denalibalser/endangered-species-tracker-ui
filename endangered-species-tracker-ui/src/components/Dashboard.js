@@ -15,11 +15,13 @@ class Dashboard extends Component {
         return (
             <div>
                 <h1>Welcome {this.props.user.first_name}</h1>
+                <div className="h-48 flex flex-wrap content-start ...">
                 {this.props.userAnimalCards.map(animalCard => {
                     if(animalCard.user.id === this.props.user.id) {
                         return <AnimalCard key={animalCard.id} animal={animalCard} remove={this.props.removeAnimal}/>
                     }})
-                }     
+                } 
+                </div>    
             </div> 
         ); 
     } 

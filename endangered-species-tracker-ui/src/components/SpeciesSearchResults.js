@@ -4,7 +4,7 @@ import Animal from './Animal'
 const SpeciesSearchResults = ({ results=[] }) => {
     
         return (
-            <>
+            <div className="h-48 flex flex-wrap content-start ...">
                 { results.map((data) => {
                     if (data) {
                         return (
@@ -14,7 +14,7 @@ const SpeciesSearchResults = ({ results=[] }) => {
                     return null
                 }) 
                 }
-            </>
+            </div>
         )
     }
 
