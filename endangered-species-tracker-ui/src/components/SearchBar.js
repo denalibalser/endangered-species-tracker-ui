@@ -30,7 +30,7 @@ class SearchBar extends Component {
     }
 
     render(){ 
-        const BarStyling = {width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"};
+        const BarStyling = {margin: "0.75rem", width:"20rem", background:"#F2F1F9", border:"none", padding:"0.5rem"};
         console.log(this.state)
         
         return (

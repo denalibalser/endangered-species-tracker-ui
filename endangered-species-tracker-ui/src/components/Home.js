@@ -15,7 +15,7 @@ class Home extends Component { //return to functional component??
         
         return ( 
             <div>
-                <h1>Home</h1>
+                <h1 className="m-3">Home</h1>
                 {/* need a search-bar component - which will then render AnimalsContainer component that renders the Animal components for the animals that match the search */}
                 {/* <AnimalsContainer /> */}
 

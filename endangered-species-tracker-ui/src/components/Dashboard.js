@@ -11,7 +11,6 @@ class Dashboard extends Component {
     }
 
     render() {
-        // {this.props.fetchSavedAnimals(this.props.user.id)}
         return (
             <div>
                 <h1 className="m-3">Welcome {this.props.user.first_name}</h1>
