@@ -10,15 +10,15 @@ class Navbar extends Component {
             <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
                 <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                     <div class="text-sm lg:flex-grow">
-                        <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                        <a href="/" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                             <Link to="/">Home</Link>
                         </a>
                         {this.props.loggedIn ? (
                             <>
-                                <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                                <a href="/dashboard" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                                     <Link to="/dashboard">Dashboard</Link>
                                 </a>
-                                <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                                <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                                     <Link to="#" onClick={() => this.props.logout(this.props.history)}>
                                         Logout
                                     </Link>
@@ -26,10 +26,10 @@ class Navbar extends Component {
                             </>
                         ) : (
                             <>
-                                <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                                <a href="/signup" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                                     <Link to="/signup">Signup</Link>
                                 </a>
-                                <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                                <a href="/login" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                                     <Link to="/login">Login</Link>
                                 </a>
                             </>
