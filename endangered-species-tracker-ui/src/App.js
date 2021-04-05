@@ -32,7 +32,7 @@ class App extends Component {
         <Router>
         <Navbar/>
           <Switch>
-            <Route exact path="/" //use props.loggedIn to render different info on Home page here
+            <Route exact path="/" 
             component={Home} />
             <Route
               path="/dashboard"
@@ -44,7 +44,7 @@ class App extends Component {
                 }
               }}
             />
-            <Route path="/signup" component={Signup} /> {/* removed 'exact from route path */}
+            <Route path="/signup" component={Signup} /> 
             <Route path="/login" component={Login} />
 
           </Switch>

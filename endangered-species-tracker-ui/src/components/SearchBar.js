@@ -23,7 +23,6 @@ class SearchBar extends Component {
             filteredData: this.state.data.filter(element => {
                 if(query !== '') {
                     return element[0].charAt(0).toLowerCase().includes(query.toLowerCase())
-                    // element[0].charAt(0).toLowerCase().includes(query.toLowerCase())
                 }
             })
         })

@@ -34,11 +34,8 @@ class Navbar extends Component {
                                 </a>
                             </>
                         )}
-
-                   
                     </div>
-                </div>
-                
+                </div>  
             </nav>
         );
     }
@@ -46,7 +43,7 @@ class Navbar extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    loggedIn: state.auth.loggedIn,
+    loggedIn: state.auth.loggedIn
   };
 };
 

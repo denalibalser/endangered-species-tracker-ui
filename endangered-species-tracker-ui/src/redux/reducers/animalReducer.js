@@ -1,4 +1,3 @@
-// import { StaticRouter } from "react-router-dom";
 
 export default (state = {
     loading: false,

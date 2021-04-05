@@ -14,7 +14,6 @@ class SearchPage extends Component {
         return (
             <div>
                 <SearchBar species={this.props.species} /> 
-                {/* search={this.props.fetchAllAnimals} */}
             </div>
         )
     }

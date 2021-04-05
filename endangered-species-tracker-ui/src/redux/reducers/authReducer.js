@@ -3,7 +3,7 @@ export default (state = {
     currentUser: {}
 }, action) => {
     switch(action.type) {
-        case 'AUTH_SUCCESS': //on successful singup OR login
+        case 'AUTH_SUCCESS': 
             return {
                 ...state, 
                 loggedIn: action.payload.loggedIn, 
