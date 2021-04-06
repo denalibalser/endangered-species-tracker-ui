@@ -7,3 +7,8 @@ I knew I wanted the theme of this project to be something I was passionate about
 
 ## Backend Repository
 [Link to Backend Repo](https://github.com/denalibalser/endangered-species-tracker-api)
+
+## Blog 
+[Link to Blog Post](https://denalibalser.github.io/react_redux_final_project)
+
+
