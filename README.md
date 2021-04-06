@@ -14,4 +14,15 @@ I knew I wanted the theme of this project to be something I was passionate about
 ## Blog 
 [Link to Blog Post](https://denalibalser.github.io/react_redux_final_project)
 
+## Deployment Instructions :
+* Clone this Repo & Backend Repo (provided above) 
+* Run 'cd endangered-species-tracker-ui'
+* Run 'yarn start'
+* Enter 'Y' when prompted
+* *In backend repo:*
+* Run 'cd endangered-species-api'
+* Run 'bundle install'
+* Run 'rails s' 
+
+
 
