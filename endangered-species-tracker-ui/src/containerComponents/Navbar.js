@@ -38,9 +38,9 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    loggedIn: state.auth.loggedIn
-  };
+    return {
+        loggedIn: state.auth.loggedIn
+    }
 };
 
 export default withRouter(connect(mapStateToProps, { logout })(Navbar));
