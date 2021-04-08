@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import  SearchBar  from '../presentationalComponents/SearchBar'
 import { connect } from 'react-redux'
-import { fetchAllAnimals } from '../redux/actions/animalActions'
+import { fetchAllSpecies } from '../redux/actions/speciesActions'
 
 
 class SearchPage extends Component {
@@ -13,7 +13,7 @@ class SearchPage extends Component {
     }
     
     componentDidMount() {
-        this.props.fetchAllAnimals(); 
+        this.props.fetchAllSpecies(); 
         this.setState({
             data: this.props.species
         })
@@ -47,9 +47,9 @@ class SearchPage extends Component {
 
 const mapStateToProps = state => {
     return {
-        species: state.animals.endangeredAnimals
+        species: state.species.endangeredSpecies
     }
 }
 
-export default connect(mapStateToProps, { fetchAllAnimals })(SearchPage);
+export default connect(mapStateToProps, { fetchAllSpecies })(SearchPage);
 

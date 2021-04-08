@@ -1,5 +1,5 @@
 import React from 'react'
-import Animal from '../containerComponents/Animal'
+import Species from '../containerComponents/Species'
 
 const SpeciesSearchResults = ({ results=[] }) => {
     
@@ -8,7 +8,7 @@ const SpeciesSearchResults = ({ results=[] }) => {
                 { results.map((data) => {
                     if (data) {
                         return (
-                            <Animal key={data[5]} animal={data}/>
+                            <Species key={data[5]} animal={data}/>
     	                )	
     	            }
                     return null

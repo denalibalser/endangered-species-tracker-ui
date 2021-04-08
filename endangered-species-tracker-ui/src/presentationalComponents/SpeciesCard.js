@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AnimalCard = (props) => {
+const SpeciesCard = (props) => {
 
     const handleOnClick = () => {
         props.remove(props.animal.id)
@@ -20,4 +20,4 @@ const AnimalCard = (props) => {
     )
 }
 
-export default AnimalCard;
+export default SpeciesCard;

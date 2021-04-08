@@ -1,20 +1,20 @@
 import { v4 as uuidv4 } from 'uuid';
 
-export const fetchAllAnimals = () => {
+export const fetchAllSpecies = () => {
     return dispatch => {
-        dispatch({type: 'LOADING_ANIMALS'})
+        dispatch({type: 'LOADING_SPECIES'})
         fetch(`https://ecos.fws.gov/ecp/pullreports/catalog/species/report/species/export`) 
         .then(resp => resp.json())
          .then(respJSON => 
             dispatch({
-                type: 'FETCH_ALL_ANIMALS', 
-                payload: {animal: respJSON.data.map(animal => animal.concat(uuidv4()))}
+                type: 'FETCH_ALL_SPECIES', 
+                payload: {species: respJSON.data.map(species => species.concat(uuidv4()))}
             })
         )
     }
 }
 
-export const saveAnimal = (animal) => { 
+export const saveSpecies = (species) => { 
     return dispatch => {
         fetch(`http://localhost:3001/api/v1/animal_cards`, {
             method: 'POST', 
@@ -22,53 +22,50 @@ export const saveAnimal = (animal) => {
                 'Content-Type': 'application/json'
             }, 
             body: JSON.stringify({
-               animal_card: animal
+               animal_card: species
             })
         })
         .then(resp => resp.json())
         .then(respJSON => {
             dispatch({
-            type: 'SAVE_ANIMAL',
-            payload: { animalCard: respJSON.animal_card },
-        })
+                type: 'SAVE_SPECIES',
+                payload: { speciesCard: respJSON.animal_card },
+            })
         })
         
 
     }
 }
 
-export const fetchSavedAnimals = (currentUserId) => { 
+export const fetchSavedSpecies = (currentUserId) => { 
     return dispatch => {
-        dispatch({type: 'LOADING_ANIMALS'})
+        dispatch({type: 'LOADING_SPECIES'})
         fetch(`http://localhost:3001/api/v1/animal_cards`)
         .then(resp => resp.json())
         .then(respJSON => { 
             dispatch({
-            type: 'FETCH_SAVED_ANIMALS',
-            payload: {animalCard: respJSON.map(animal_card => animal_card), currentUserId: currentUserId} 
-        })
+                type: 'FETCH_SAVED_SPECIES',
+                payload: {speciesCard: respJSON.map(animal_card => animal_card), currentUserId: currentUserId} 
+            })
         })
     }
 }
 
-export const removeAnimal = (id) => {
+export const removeSpecies = (id) => {
     return dispatch => {
         fetch(`http://localhost:3001/api/v1/animal_cards/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
-            }}).then(resp => resp.json())
-            .then(respJSON => {
-                dispatch({
-                    type: 'REMOVE_ANIMAL',
-                    payload: {animalCard: respJSON.animal_card}
-                })
-            }) 
-            
-    
-        }
-
-        
-    
+            }
+        })
+        .then(resp => resp.json())
+        .then(respJSON => {
+            dispatch({
+                type: 'REMOVE_SPECIES',
+                payload: {speciesCard: respJSON.animal_card}
+            })
+        }) 
+    }  
 }
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { saveAnimal } from '../redux/actions/animalActions'
-import { fetchSavedAnimals } from '../redux/actions/animalActions'
+import { saveSpecies } from '../redux/actions/speciesActions'
+import { fetchSavedSpecies } from '../redux/actions/speciesActions'
 
-class Animal extends Component {
+class Species extends Component { //maybe create SpeciesContainer component as stateful parent and make this a functional component
 
     state = {
         common_name: '',
@@ -24,8 +24,8 @@ class Animal extends Component {
     }
 
     handleOnClick = () => {
-        this.props.saveAnimal(this.state);
-        this.props.fetchSavedAnimals(this.props.currentUser.id) //dont think i need the userid at argument
+        this.props.saveSpecies(this.state);
+        this.props.fetchSavedSpecies(this.props.currentUser.id) //maybe put this in a higher up component so dont need to call here
     }
 
 
@@ -50,4 +50,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { saveAnimal, fetchSavedAnimals })(Animal);
+export default connect(mapStateToProps, { saveSpecies, fetchSavedSpecies })(Species);
