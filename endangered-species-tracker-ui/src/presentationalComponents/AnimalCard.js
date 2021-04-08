@@ -20,5 +20,4 @@ const AnimalCard = (props) => {
     )
 }
 
-
 export default AnimalCard;

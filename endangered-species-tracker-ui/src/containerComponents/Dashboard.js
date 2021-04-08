@@ -6,7 +6,7 @@ import  AnimalCard  from '../presentationalComponents/AnimalCard'
 
 class Dashboard extends Component {
 
-    componentDidMount() { //need to have fetchSavedAnimals called after new save animal 
+    componentDidMount() { 
         this.props.fetchSavedAnimals(this.props.user.id);
     }
 

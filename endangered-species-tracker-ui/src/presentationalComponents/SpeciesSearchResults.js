@@ -18,5 +18,4 @@ const SpeciesSearchResults = ({ results=[] }) => {
         )
     }
 
-
 export default SpeciesSearchResults;
