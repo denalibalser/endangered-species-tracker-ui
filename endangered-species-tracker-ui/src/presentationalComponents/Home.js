@@ -5,10 +5,7 @@ import SearchPage from '../containerComponents/SearchPage'
 
 const Home = (props) => { 
 
-    // componentDidMount() {
-    //     this.props.fetchAllAnimals();
-    // }
-
+console.log(props)
     if(props.loggedIn === false) { 
         return (
             <div>
