@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import  Home  from './components/Home'
-import  Dashboard  from './components/Dashboard'
-import Signup from './components/Signup'
-import Login from './components/Login'
-import Navbar from './components/Navbar'
+import  Home  from './presentationalComponents/Home'
+import  Dashboard  from './containerComponents/Dashboard'
+import Signup from './containerComponents/Signup'
+import Login from './containerComponents/Login'
+import Navbar from './containerComponents/Navbar'
 import { checkLoggedIn } from './redux/actions/authActions'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom';

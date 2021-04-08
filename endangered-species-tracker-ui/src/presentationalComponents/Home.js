@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchPage from './SearchPage'
+import SearchPage from '../containerComponents/SearchPage'
 // import { fetchAllAnimals } from '../redux/actions/animalActions'
 
 
@@ -19,7 +19,10 @@ const Home = (props) => {
                     order to track their endangered status and learn more about the species. To access the functionality 
                     of this application either signup or login! 
                 </h2>
-                <img className="mt-9 mb-9 ml-12 mr-12" src="https://tr-images.condecdn.net/image/E5jRGaPoy27/crop/2040/f/end.jpg" alt="Collage of Endangered Species" width="800" height="800"></img>
+                <img className="mt-9 mb-9 ml-12 mr-12" 
+                    src="https://tr-images.condecdn.net/image/E5jRGaPoy27/crop/2040/f/end.jpg" 
+                    alt="Collage of Endangered Species" width="800" height="800">  
+                </img>
             </div> 
         )
     } else {
