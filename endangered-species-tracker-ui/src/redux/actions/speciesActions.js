@@ -29,7 +29,7 @@ export const saveSpecies = (species) => {
         .then(respJSON => {
             dispatch({
                 type: 'SAVE_SPECIES',
-                payload: { speciesCard: respJSON.animal_card },
+                payload: { speciesCard: respJSON.species_card },
             })
         })
         
@@ -45,7 +45,7 @@ export const fetchSavedSpecies = (currentUserId) => {
         .then(respJSON => { 
             dispatch({
                 type: 'FETCH_SAVED_SPECIES',
-                payload: {speciesCard: respJSON.map(animal_card => animal_card), currentUserId: currentUserId} 
+                payload: {speciesCard: respJSON.map(species_card => species_card), currentUserId: currentUserId} 
             })
         })
     }
@@ -63,7 +63,7 @@ export const removeSpecies = (id) => {
         .then(respJSON => {
             dispatch({
                 type: 'REMOVE_SPECIES',
-                payload: {speciesCard: respJSON.animal_card}
+                payload: {speciesCard: respJSON.species_card}
             })
         }) 
     }  

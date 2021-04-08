@@ -3,7 +3,6 @@ import  SearchBar  from '../presentationalComponents/SearchBar'
 import { connect } from 'react-redux'
 import { fetchAllSpecies } from '../redux/actions/speciesActions'
 
-
 class SearchPage extends Component {
 
     state = {
@@ -37,9 +36,6 @@ class SearchPage extends Component {
         return (
             <div>
                 <SearchBar searchState={this.state} changeState={this.changeState}/> 
-
-                {/* <SearchBar query={this.state.query} species={this.state.data} filteredData={this.state.filteredData}/>  */}
-                {/* species={this.props.species} */}
             </div>
         )
     }
