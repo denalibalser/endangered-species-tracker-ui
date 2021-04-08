@@ -1,5 +1,5 @@
 import React from 'react'
-import Animal from './Animal'
+import Animal from '../components/Animal'
 
 const SpeciesSearchResults = ({ results=[] }) => {
     

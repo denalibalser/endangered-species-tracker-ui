@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchSavedAnimals } from '../redux/actions/animalActions'
 import { removeAnimal } from '../redux/actions/animalActions'
-import  AnimalCard  from './AnimalCard'
+import  AnimalCard  from '../presentationalComponents/AnimalCard'
 
 class Dashboard extends Component {
 

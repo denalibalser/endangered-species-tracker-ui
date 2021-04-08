@@ -14,8 +14,11 @@ class Navbar extends Component {
                         {this.props.loggedIn ? (
                             <>
                                 <Link to="/dashboard" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">Dashboard</Link>
-                                <Link to="#" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-                                onClick={() => this.props.logout(this.props.history)}>Logout</Link>
+                                <Link to="#" 
+                                    className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+                                    onClick={() => this.props.logout(this.props.history)}>
+                                    Logout
+                                </Link>
                             </>
                         ) : (
                             <>

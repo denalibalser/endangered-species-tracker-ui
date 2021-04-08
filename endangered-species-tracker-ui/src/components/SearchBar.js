@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SpeciesSearchResults from './SpeciesSearchResults'
+import SpeciesSearchResults from '../presentationalComponents/SpeciesSearchResults'
 
 class SearchBar extends Component {
 
