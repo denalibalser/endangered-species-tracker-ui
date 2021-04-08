@@ -11,17 +11,18 @@ class Dashboard extends Component {
     }
 
     render() {
+        console.log(this.props)
         return (
             <div>
                 <h1 className="m-3"><strong>Welcome {this.props.user.first_name}</strong></h1>
                 <h2 className="m-3">Here are your saved species...</h2>
-                    <div className="h-48 flex flex-wrap content-start ...">
-                        {this.props.userSpeciesCards.map(speciesCard => {
-                            if(speciesCard.user.id === this.props.user.id) {
-                                return <SpeciesCard key={speciesCard.id} animal={speciesCard} remove={this.props.removeSpecies}/>
-                            }
-                        })} 
-                    </div>    
+                <div className="h-48 flex flex-wrap content-start ...">
+                    {this.props.userSpeciesCards.map(speciesCard => {
+                        if(speciesCard.user_id === this.props.user.id) {
+                            return <SpeciesCard key={speciesCard.id} animal={speciesCard} remove={this.props.removeSpecies}/>
+                        }
+                    })} 
+                </div>    
             </div> 
         ); 
     } 
