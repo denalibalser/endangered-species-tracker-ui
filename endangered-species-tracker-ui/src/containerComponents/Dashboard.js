@@ -11,7 +11,6 @@ class Dashboard extends Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             <div>
                 <h1 className="m-3"><strong>Welcome {this.props.user.first_name}</strong></h1>

@@ -1,23 +1,23 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { saveSpecies } from '../redux/actions/speciesActions'
-import { fetchSavedSpecies } from '../redux/actions/speciesActions'
+// import React, { Component } from 'react'
+// import { connect } from 'react-redux'
+// import { saveSpecies } from '../redux/actions/speciesActions'
+// import { fetchSavedSpecies } from '../redux/actions/speciesActions'
 
-class SpeciesContainer extends Component {
+// class SpeciesContainer extends Component {
 
-    render() {
-        return (
-            <div>
+//     render() {
+//         return (
+//             <div>
 
-            </div>
-        )
-    }
-}
+//             </div>
+//         )
+//     }
+// }
 
-const mapStateToProps = state => {
-    return {
-        currentUser: state.auth.currentUser
-    }
-}
+// const mapStateToProps = state => {
+//     return {
+//         currentUser: state.auth.currentUser
+//     }
+// }
 
-export default connect(mapStateToProps, { saveSpecies, fetchSavedSpecies })(SpeciesContainer);
+// export default connect(mapStateToProps, { saveSpecies, fetchSavedSpecies })(SpeciesContainer);
