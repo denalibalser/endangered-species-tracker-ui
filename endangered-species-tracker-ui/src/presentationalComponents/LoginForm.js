@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const LoginForm = (props) => {
-
+    
     return (
         <div className="flex h-screen">
             <div className="w-full max-w-xs m-auto bg-indigo-100 rounded p-5">
