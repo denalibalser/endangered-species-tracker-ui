@@ -23,7 +23,7 @@ export default function speciesReducer(state = {
             return {
                 ...state, 
                 endangeredSpecies: [...state.endangeredSpecies],
-                speciesCards: [...state.speciesCards.concat(action.payload.speciesCard)], //changed this from action.payload.animal_card
+                speciesCards: [...state.speciesCards.concat(action.payload.speciesCard)], 
                 loading: false
             }
 
