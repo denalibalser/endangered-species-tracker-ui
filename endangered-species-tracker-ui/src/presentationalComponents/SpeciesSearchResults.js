@@ -1,7 +1,5 @@
 import React from 'react'
 import Species from '../containerComponents/Species'
-// import SpeciesContainer from '../containerComponents/SpeciesContainer'
-
 
 const SpeciesSearchResults = ({ results=[] }) => {
     

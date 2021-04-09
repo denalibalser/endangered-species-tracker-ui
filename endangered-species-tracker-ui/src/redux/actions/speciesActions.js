@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+const baseURL = 'http://localhost:3001/api/v1/animal_cards'
 
 export const fetchAllSpecies = () => {
     return dispatch => {
@@ -16,7 +17,7 @@ export const fetchAllSpecies = () => {
 
 export const saveSpecies = (species) => { 
     return dispatch => {
-        fetch(`http://localhost:3001/api/v1/animal_cards`, {
+        fetch(`${baseURL}`, {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
@@ -40,7 +41,7 @@ export const saveSpecies = (species) => {
 export const fetchSavedSpecies = (currentUserId) => { 
     return dispatch => {
         dispatch({type: 'LOADING_SPECIES'})
-        fetch(`http://localhost:3001/api/v1/animal_cards`)
+        fetch(`${baseURL}`)
         .then(resp => resp.json())
         .then(respJSON => { 
             dispatch({
@@ -53,7 +54,7 @@ export const fetchSavedSpecies = (currentUserId) => {
 
 export const removeSpecies = (id) => {
     return dispatch => {
-        fetch(`http://localhost:3001/api/v1/animal_cards/${id}`, {
+        fetch(`${baseURL}/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'

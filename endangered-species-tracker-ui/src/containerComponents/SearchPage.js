@@ -32,7 +32,7 @@ class SearchPage extends Component {
     }
 
     render() {
-        console.log(this.state)
+        console.log(this.state) //REMEMBER TO REMOVE!!
         return (
             <div>
                 <SearchBar searchState={this.state} changeState={this.changeState}/> 
