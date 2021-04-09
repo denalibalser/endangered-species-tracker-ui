@@ -1,6 +1,8 @@
+const baseURL = 'http://localhost:3001/api/v1'
+
 export const signup = (user, history) => {
     return dispatch => {
-        fetch(`http://localhost:3001/api/v1/users`, {
+        fetch(`${baseURL}/users`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -14,14 +16,14 @@ export const signup = (user, history) => {
             type: 'AUTH_SUCCESS',
             payload: { loggedIn: data.logged_in, currentUser: data.user },
         });
-            history.push(`/dashboard`) //now waits to redirect until promise is returned from api and resolved in action
+            history.push(`/dashboard`) 
         });
     };
 };
 
 export const login = (user, history) => {
     return dispatch => {
-        fetch(`http://localhost:3001/api/v1/sessions`, {
+        fetch(`${baseURL}/sessions`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -35,14 +37,14 @@ export const login = (user, history) => {
             type: 'AUTH_SUCCESS',
             payload: { loggedIn: data.logged_in, currentUser: data.user },
         });
-            history.push(`/dashboard`) //now waits to redirect until promise is returned from api and resolved in action
+            history.push(`/dashboard`) 
         });
     };
 };
 
 export const checkLoggedIn = (callback) => {
     return dispatch => {
-        fetch(`http://localhost:3001/api/v1/logged_in`, {
+        fetch(`${baseURL}/logged_in`, {
             credentials: 'include'
         })
         .then(resp => resp.json())
@@ -63,7 +65,7 @@ export const checkLoggedIn = (callback) => {
 
 export const logout = (history) => {
     return dispatch => {
-        fetch(`http://localhost:3001/api/v1/logout`, {
+        fetch(`${baseURL}/logout`, {
             method: 'DELETE',
             credentials: 'include'
         })
