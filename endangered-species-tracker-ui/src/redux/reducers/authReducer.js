@@ -1,7 +1,7 @@
-export default (state = {
+export default function authReducer(state = {
     loggedIn: false,
     currentUser: {}
-}, action) => {
+}, action) {
     switch(action.type) {
         case 'AUTH_SUCCESS': 
             return {

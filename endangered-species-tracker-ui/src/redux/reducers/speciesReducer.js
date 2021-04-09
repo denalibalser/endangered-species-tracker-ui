@@ -1,10 +1,8 @@
-export default (state = {
+export default function speciesReducer(state = {
     loading: false,
     endangeredSpecies: [],
-    speciesCards: []       
-        
-}, action) => {
-    
+    speciesCards: []         
+}, action) {
     switch(action.type) { 
         case 'LOADING_SPECIES':
             return {

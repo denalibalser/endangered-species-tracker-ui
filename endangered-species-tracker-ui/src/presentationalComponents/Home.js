@@ -5,7 +5,6 @@ import SearchPage from '../containerComponents/SearchPage'
 
 const Home = (props) => { 
 
-console.log(props)
     if(props.loggedIn === false) { 
         return (
             <div>
