@@ -47,6 +47,7 @@ export const SignupForm = (props) => {
                             onChange={props.handleOnChange} 
                             value={props.password} 
                             type="text"
+                            autoComplete="off"
                         />
                     </div>
                     <div>

@@ -22,18 +22,20 @@ export const LoginForm = (props) => {
                         <label className="block mb-2 text-indigo-500" htmlFor="password">Password</label>
                         <div className="relative w-full">
                             <div className="absolute inset-y-0 right-0 flex items-center px-2">
-                                <input className="hidden js-password-toggle" id="toggle" type="checkbox" />
                                 <label className="bg-gray-300 hover:bg-gray-400 rounded px-2 py-1 text-sm text-gray-600 font-mono cursor-pointer js-password-label" htmlFor="toggle">show</label>
+                                <input className="hidden js-password-toggle" id="toggle" name="toggle" type="checkbox" />
                             </div>
-                        <input 
-                            className="appearance-none w-full p-2 mb-6 text-indigo-700 border-b-2 leading-tight border-indigo-500 outline-none focus:bg-gray-300 js-password"
-                            name="password"
-                            onChange={props.handleOnChange} 
-                            value={props.password} 
-                            type="password"
-                            autoComplete="off"
-                        />
-                    </div>
+                            <input 
+                                // className="appearance-none w-full p-2 mb-6 text-indigo-700 border-b-2 leading-tight border-indigo-500 outline-none focus:bg-gray-300 js-password"
+                                className="appearance-none border-b-2 w-full py-3 px-3 leading-tight border-indigo-500 bg-gray-100 focus:outline-none focus:border-indigo-700 focus:bg-gray-300 text-indigo-700 pr-16 font-mono js-password"
+                                id="password"
+                                name="password"
+                                onChange={props.handleOnChange} 
+                                value={props.password} 
+                                type="password"
+                                autoComplete="off"
+                            />
+                        </div>
                     </div>    
                     <button className="w-full bg-indigo-700 hover:bg-pink-700 text-white font-bold py-2 px-4 mb-6 rounded" type="submit">Login</button>
                 </form>
