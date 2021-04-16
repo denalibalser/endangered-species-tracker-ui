@@ -1,7 +1,5 @@
 import React from 'react'
 import SearchPage from '../containerComponents/SearchPage'
-// import { fetchAllAnimals } from '../redux/actions/animalActions'
-
 
 const Home = (props) => { 
 
