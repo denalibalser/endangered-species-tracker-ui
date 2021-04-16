@@ -2,7 +2,7 @@ import React from 'react'
 import SpeciesSearchResults from './SpeciesSearchResults'
 
 const SearchBar = (props) => {
-        
+    
     return (
         <div>
             <div className="p-8">
@@ -19,7 +19,7 @@ const SearchBar = (props) => {
             </div>
             <SpeciesSearchResults results={props.searchState.filteredData} />
         </div>  
-    ) 
+    )    
 }
 
 export default SearchBar; 

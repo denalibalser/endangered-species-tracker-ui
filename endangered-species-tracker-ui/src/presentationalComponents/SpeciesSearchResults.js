@@ -11,8 +11,9 @@ const SpeciesSearchResults = ({ results=[] }) => {
                             return (
                                 <Species key={data[5]} species={data}/>
     	                    )	
-    	                }
-                        return null
+    	                } else {
+                            return null
+                        } 
                     }) 
                 }
             </div>

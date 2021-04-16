@@ -25,7 +25,7 @@ class Species extends Component { //maybe create SpeciesContainer component as s
 
     handleOnClick = () => {
         this.props.saveSpecies(this.state);
-        this.props.fetchSavedSpecies(this.props.currentUser.id) //maybe put this in a higher up component so dont need to call here
+        this.props.fetchSavedSpecies(this.props.currentUser.id) 
     }
 
     render() {
