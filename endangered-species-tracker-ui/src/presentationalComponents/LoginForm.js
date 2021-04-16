@@ -36,8 +36,10 @@ export const LoginForm = (props) => {
                                 autoComplete="off"
                             />
                         </div>
-                    </div>    
-                    <button className="w-full bg-indigo-700 hover:bg-pink-700 text-white font-bold py-2 px-4 mb-6 rounded" type="submit">Login</button>
+                    </div>  
+                    <button className="w-full bg-indigo-700 hover:bg-pink-700 text-white font-medium py-3 px-4 mt-10 rounded focus:outline-none focus:shadow-outline" type="submit">
+                        Login
+                    </button>  
                 </form>
             </div>
         </div>
