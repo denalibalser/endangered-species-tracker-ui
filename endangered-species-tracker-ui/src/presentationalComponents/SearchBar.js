@@ -2,7 +2,9 @@ import React from 'react'
 import SpeciesSearchResults from './SpeciesSearchResults'
 
 const SearchBar = (props) => {
-    
+    if(props.loadingAllSpecies === true) {
+        return <h1>Loading...</h1>
+    }
     return (
         <div>
             <div className="p-8">

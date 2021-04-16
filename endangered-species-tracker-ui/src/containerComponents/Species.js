@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { saveSpecies } from '../redux/actions/speciesActions'
-import { fetchSavedSpecies } from '../redux/actions/speciesActions'
 
-class Species extends Component { //maybe create SpeciesContainer component as stateful parent and make this a functional component
+class Species extends Component { 
 
     state = {
         common_name: '',
@@ -25,7 +24,6 @@ class Species extends Component { //maybe create SpeciesContainer component as s
 
     handleOnClick = () => {
         this.props.saveSpecies(this.state);
-        this.props.fetchSavedSpecies(this.props.currentUser.id) 
     }
 
     render() {
@@ -49,4 +47,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { saveSpecies, fetchSavedSpecies })(Species);
+export default connect(mapStateToProps, { saveSpecies })(Species);

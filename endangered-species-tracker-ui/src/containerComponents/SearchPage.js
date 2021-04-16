@@ -7,24 +7,19 @@ class SearchPage extends Component {
 
     state = {
         query: '',
-        data: [],
         filteredData: []
     }
     
     componentDidMount() {
         // this.props.fetchAllSpecies(); 
         this.props.dispatchFetchAllSpecies(); 
-        this.setState({
-            data: this.props.species
-        })
     }
 
     changeState = (event) => {
         const query = event.target.value
         this.setState({
             query: event.target.value, 
-            data: [...this.state.data],
-            filteredData: this.state.data.filter(element => {
+            filteredData: this.props.allSpecies.filter(element => {
                 if(query !== '') {
                     return element[0].charAt(0).toLowerCase().includes(query.toLowerCase())
                 }
@@ -36,7 +31,12 @@ class SearchPage extends Component {
         console.log(this.state) //REMEMBER TO REMOVE!!
         return (
             <div>
-                <SearchBar searchState={this.state} changeState={this.changeState}/> 
+                <SearchBar 
+                    allSpecies={this.props.allSpecies} 
+                    searchState={this.state} 
+                    loadingAllSpecies={this.props.loadingAllSpecies} 
+                    changeState={this.changeState}
+                /> 
             </div>
         )
     }
@@ -44,7 +44,8 @@ class SearchPage extends Component {
 
 const mapStateToProps = state => {
     return {
-        species: state.species.endangeredSpecies
+        allSpecies: state.species.endangeredSpecies,
+        loadingAllSpecies: state.species.loading
     }
 }
 
