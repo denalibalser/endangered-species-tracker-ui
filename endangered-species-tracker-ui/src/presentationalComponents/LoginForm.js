@@ -1,6 +1,8 @@
 import React from 'react'
 
 export const LoginForm = (props) => {
+
+
     return (
         <div className="flex h-screen">
             <div className="w-full max-w-xs m-auto bg-indigo-100 rounded p-5">
@@ -16,6 +18,7 @@ export const LoginForm = (props) => {
                             onChange={props.handleOnChange} 
                             value={props.username} 
                             type="text"
+                            autoComplete="off"
                         />
                     </div>
                     <div>
@@ -26,7 +29,6 @@ export const LoginForm = (props) => {
                                 <input className="hidden js-password-toggle" id="toggle" name="toggle" type="checkbox" />
                             </div>
                             <input 
-                                // className="appearance-none w-full p-2 mb-6 text-indigo-700 border-b-2 leading-tight border-indigo-500 outline-none focus:bg-gray-300 js-password"
                                 className="appearance-none border-b-2 w-full py-3 px-3 leading-tight border-indigo-500 bg-gray-100 focus:outline-none focus:border-indigo-700 focus:bg-gray-300 text-indigo-700 pr-16 font-mono js-password"
                                 id="password"
                                 name="password"

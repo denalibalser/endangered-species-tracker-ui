@@ -1,6 +1,6 @@
 export default function authReducer(state = {
     loggedIn: false,
-    currentUser: {}
+    currentUser: {}, 
 }, action) {
     switch(action.type) {
         case 'AUTH_SUCCESS': 

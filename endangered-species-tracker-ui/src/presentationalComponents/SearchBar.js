@@ -3,7 +3,7 @@ import SpeciesSearchResults from './SpeciesSearchResults'
 
 const SearchBar = (props) => {
     if(props.loadingAllSpecies === true) {
-        return <h1>Loading...</h1>
+        return <h1>Loading species...</h1>
     }
     return (
         <div>

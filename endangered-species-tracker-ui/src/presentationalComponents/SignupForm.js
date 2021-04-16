@@ -17,6 +17,7 @@ export const SignupForm = (props) => {
                             onChange={props.handleOnChange} 
                             value={props.username} 
                             type="text"
+                            autoComplete="off"
                         />
                     </div>
                     <div>
@@ -27,6 +28,7 @@ export const SignupForm = (props) => {
                             onChange={props.handleOnChange} 
                             value={props.first_name} 
                             type="text"
+                            autoComplete="off"
                         />
                     </div>
                     <div>
@@ -37,6 +39,7 @@ export const SignupForm = (props) => {
                             onChange={props.handleOnChange} 
                             value={props.last_name} 
                             type="text"
+                            autoComplete="off"
                         />
                     </div>
                     <div>
@@ -58,6 +61,7 @@ export const SignupForm = (props) => {
                             onChange={props.handleOnChange} 
                             value={props.password_confirmation} 
                             type="text"
+                            autoComplete="off"
                         />
                     </div>
                     <button className="btn" type="submit">Signup</button>            
