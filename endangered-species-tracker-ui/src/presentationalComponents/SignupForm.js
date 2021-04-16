@@ -26,7 +26,7 @@ export const SignupForm = (props) => {
                             className="w-full p-2 mb-6 text-indigo-700 border-b-2 border-indigo-500 outline-none focus:bg-gray-300"
                             name="first_name"
                             onChange={props.handleOnChange} 
-                            value={props.first_name} 
+                            value={props.firstName} 
                             type="text"
                             autoComplete="off"
                         />
@@ -37,7 +37,7 @@ export const SignupForm = (props) => {
                             className="w-full p-2 mb-6 text-indigo-700 border-b-2 border-indigo-500 outline-none focus:bg-gray-300"
                             name="last_name"
                             onChange={props.handleOnChange} 
-                            value={props.last_name} 
+                            value={props.lastName} 
                             type="text"
                             autoComplete="off"
                         />
@@ -59,7 +59,7 @@ export const SignupForm = (props) => {
                             className="w-full p-2 mb-6 text-indigo-700 border-b-2 border-indigo-500 outline-none focus:bg-gray-300"
                             name="password_confirmation"
                             onChange={props.handleOnChange} 
-                            value={props.password_confirmation} 
+                            value={props.passwordConfirmation} 
                             type="text"
                             autoComplete="off"
                         />

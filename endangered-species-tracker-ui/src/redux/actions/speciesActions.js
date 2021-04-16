@@ -41,12 +41,12 @@ export const saveSpecies = (species) => {
 export const fetchSavedSpecies = (currentUserId) => { 
     return dispatch => {
         dispatch({type: 'LOADING_SPECIES'})
-        fetch(`${baseURL}`)
+        fetch(`http://localhost:3001/api/v1/users/${currentUserId}`)
         .then(resp => resp.json())
-        .then(respJSON => { 
+        .then(respJSON =>  {
             dispatch({
                 type: 'FETCH_SAVED_SPECIES',
-                payload: {speciesCard: respJSON.map(species_card => species_card), currentUserId: currentUserId} 
+                payload: {speciesCard: respJSON.species_cards.map(species_card => species_card), currentUserId: currentUserId} 
             })
         })
     }

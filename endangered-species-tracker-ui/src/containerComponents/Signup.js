@@ -38,10 +38,10 @@ class Signup extends Component {
             <Redirect to="/dashboard"/> :
             <SignupForm 
                 username={this.state.username}
-                first_name={this.state.first_name}
-                last_name={this.state.last_name}
+                firstName={this.state.first_name}
+                lastName={this.state.last_name}
                 password={this.state.password}
-                password_confirmation={this.state.password_confirmation}
+                passwordConfirmation={this.state.password_confirmation}
                 handleOnChange={this.handleOnChange}
                 handleOnSubmit={this.handleOnSubmit}
             /> 
