@@ -27,7 +27,6 @@ class SearchPage extends Component {
     }
 
     render() {
-        console.log(this.state) //REMEMBER TO REMOVE!!
         return (
             <div>
                 <SearchBar 
