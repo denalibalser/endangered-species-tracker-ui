@@ -6,7 +6,6 @@ import { fetchAllSpecies } from '../redux/actions/speciesActions'
 class SearchPage extends Component {
 
     state = {
-        query: '',
         filteredData: []
     }
     
@@ -17,7 +16,6 @@ class SearchPage extends Component {
     changeState = (event) => {
         const query = event.target.value
         this.setState({
-            query: event.target.value, 
             filteredData: this.props.allSpecies.filter(element => {
                 if(query !== '') {
                     return element[0].charAt(0).toLowerCase().includes(query.toLowerCase())
