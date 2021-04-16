@@ -11,8 +11,7 @@ class SearchPage extends Component {
     }
     
     componentDidMount() {
-        // this.props.fetchAllSpecies(); 
-        this.props.dispatchFetchAllSpecies(); 
+        this.props.fetchAllSpecies(); 
     }
 
     changeState = (event) => {
@@ -49,13 +48,5 @@ const mapStateToProps = state => {
     }
 }
 
-const mapStateToDispatch = dispatch => {
-    return {
-        dispatchFetchAllSpecies: () => dispatch(fetchAllSpecies())
-    }
-}
-
-export default connect(mapStateToProps, mapStateToDispatch)(SearchPage);
-
-// export default connect(mapStateToProps, { fetchAllSpecies })(SearchPage);
+export default connect(mapStateToProps, { fetchAllSpecies })(SearchPage);
 
