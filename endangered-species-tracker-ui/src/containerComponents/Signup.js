@@ -25,13 +25,6 @@ class Signup extends Component {
         event.preventDefault();
         if(this.validateForm()) {
             this.props.signup(this.state, this.props.history)
-            // this.setState({
-            //     username: '',
-            //     first_name: '', 
-            //     last_name: '', 
-            //     password: '',
-            //     password_confirmation: '' 
-            // })
         } 
     }
 
@@ -69,15 +62,15 @@ class Signup extends Component {
             <Redirect to="/dashboard"/> :
             <SignupForm 
                 username={this.state.username}
-                usernameError={this.state.errors.username} //added
+                usernameError={this.state.errors.username} 
                 firstName={this.state.first_name}
                 firstNameError={this.state.errors.firstName}
                 lastName={this.state.last_name}
                 lastNameError={this.state.errors.lastName}
                 password={this.state.password}
-                passwordError={this.state.errors.password} //added
+                passwordError={this.state.errors.password} 
                 passwordConfirmation={this.state.password_confirmation}
-                passwordConfirmationError={this.state.errors.passwordConfirmation} //added
+                passwordConfirmationError={this.state.errors.passwordConfirmation} 
                 handleOnChange={this.handleOnChange}
                 handleOnSubmit={this.handleOnSubmit}
             /> 
