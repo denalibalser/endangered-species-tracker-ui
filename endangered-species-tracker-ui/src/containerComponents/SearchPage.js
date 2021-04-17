@@ -16,9 +16,9 @@ class SearchPage extends Component {
     changeState = (event) => {
         const query = event.target.value
         this.setState({
-            filteredData: this.props.allSpecies.filter(element => {
+            filteredData: this.props.allSpecies.filter(species => {
                 if(query !== '') {
-                    return element[0].charAt(0).toLowerCase().includes(query.toLowerCase())
+                    return species[0].charAt(0).toLowerCase().includes(query.toLowerCase()) //need to figure out way to search by more than just first letter 
                 }
             })
         })
