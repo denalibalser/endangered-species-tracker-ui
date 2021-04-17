@@ -1,6 +1,6 @@
 const baseURL = 'http://localhost:3001/api/v1'
 
-export const signup = (user, history) => {
+export const signup = (user, history) => { 
     return dispatch => {
         fetch(`${baseURL}/users`, {
             method: 'POST',
@@ -12,16 +12,23 @@ export const signup = (user, history) => {
         })
         .then(resp => resp.json())
         .then(data => {
-            dispatch({
-            type: 'AUTH_SUCCESS',
-            payload: { loggedIn: data.logged_in, currentUser: data.user },
-        });
-            history.push(`/dashboard`) 
+            if(data.error || data.logged_in === false) {
+                dispatch({
+                    type: 'AUTH_FAILURE',
+                    payload: { loggedIn: data.logged_in, error: data.error }
+                })
+            } else {
+                dispatch({
+                    type: 'AUTH_SUCCESS',
+                    payload: { loggedIn: data.logged_in, currentUser: data.user },
+                });
+                history.push(`/dashboard`) 
+            }
         });
     };
 };
 
-export const login = (user, history) => {
+export const login = (user, history) => { 
     return dispatch => {
         fetch(`${baseURL}/sessions`, {
             method: 'POST',
@@ -33,11 +40,18 @@ export const login = (user, history) => {
         })
         .then(resp => resp.json())
         .then(data => {
-            dispatch({
-            type: 'AUTH_SUCCESS',
-            payload: { loggedIn: data.logged_in, currentUser: data.user },
-        });
-            history.push(`/dashboard`) 
+            if(data.logged_in === false) { 
+                dispatch({
+                    type: 'AUTH_FAILURE',
+                    payload: { loggedIn: data.logged_in, error: data.error }
+                })
+            } else {
+                dispatch({
+                    type: 'AUTH_SUCCESS',
+                    payload: { loggedIn: data.logged_in, currentUser: data.user },
+                });
+                history.push(`/dashboard`) 
+            } 
         });
     };
 };

@@ -20,6 +20,7 @@ export const SignupForm = (props) => {
                             autoComplete="off"
                         />
                         <div className='errorMsg'>{props.usernameError}</div>
+                        <div className='errorMsg'>{props.error}</div>
                     </div>
                     <div>
                         <label className="block mb-2 text-indigo-500" htmlFor="first_name">First Name</label>

@@ -24,7 +24,9 @@ class Signup extends Component {
     handleOnSubmit = event => {
         event.preventDefault();
         if(this.validateForm()) {
-            this.props.signup(this.state, this.props.history)
+            const state = {...this.state};
+            delete state.errors;
+            this.props.signup(state, this.props.history) 
         } 
     }
 
@@ -61,6 +63,7 @@ class Signup extends Component {
             this.props.loggedIn ? 
             <Redirect to="/dashboard"/> :
             <SignupForm 
+                errors={this.props.errors}
                 username={this.state.username}
                 usernameError={this.state.errors.username} 
                 firstName={this.state.first_name}
@@ -80,7 +83,8 @@ class Signup extends Component {
 
 const mapStateToProps = state => {
     return {
-        loggedIn: state.auth.loggedIn
+        loggedIn: state.auth.loggedIn,
+        errors: state.auth.errors
     }
 }
 

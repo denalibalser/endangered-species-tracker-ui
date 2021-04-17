@@ -20,15 +20,11 @@ export const LoginForm = (props) => {
                             type="text"
                             autoComplete="off"
                         />
-                        <div className='errorMsg'>{props.usernameError}</div> {/* added */}
+                        <div className='errorMsg'>{props.usernameError}</div> 
                     </div>
                     <div>
                         <label className="block mb-2 text-indigo-500" htmlFor="password">Password</label>
                         <div className="relative w-full">
-                            <div className="absolute inset-y-0 right-0 flex items-center px-2">
-                                <label className="bg-gray-300 hover:bg-gray-400 rounded px-2 py-1 text-sm text-gray-600 font-mono cursor-pointer js-password-label" htmlFor="toggle">show</label>
-                                <input className="hidden js-password-toggle" id="toggle" name="toggle" type="checkbox" />
-                            </div>
                             <input 
                                 className="appearance-none border-b-2 w-full py-3 px-3 leading-tight border-indigo-500 bg-gray-100 focus:outline-none focus:border-indigo-700 focus:bg-gray-300 text-indigo-700 pr-16 font-mono js-password"
                                 id="password"
@@ -38,7 +34,7 @@ export const LoginForm = (props) => {
                                 type="password"
                                 autoComplete="off"
                             />
-                            <div className='errorMsg'>{props.passwordError}</div> {/* added */}
+                            <div className='errorMsg'>{props.passwordError}</div> 
 
                         </div>
                     </div>  
