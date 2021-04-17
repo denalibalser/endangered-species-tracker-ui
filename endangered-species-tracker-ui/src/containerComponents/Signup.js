@@ -43,11 +43,13 @@ class Signup extends Component {
           formIsValid = false
           errors['username'] = '*Please enter your username'
         }
-        if(this.state.username) {
-            if(!this.state.username.match(/^\w+$/)) {
-                formIsValid = false
-                errors['username'] = '*Please use alphanumeric characters only'
-            }
+        if(!this.state.first_name) {
+            formIsValid = false
+            errors['firstName'] = '*Please enter a first name'
+        }
+        if(!this.state.last_name) {
+            formIsValid = false
+            errors['lastName'] = '*Please enter a last name'
         }
         if(!this.state.password) {
             formIsValid = false
@@ -55,7 +57,7 @@ class Signup extends Component {
         }
         if(this.state.password !== this.state.password_confirmation) {
             formIsValid = false 
-            errors['password_confirmation'] = '*Password do not match'
+            errors['passwordConfirmation'] = '*Passwords do not match'
         }
         this.setState({ errors })
         return formIsValid
@@ -69,11 +71,13 @@ class Signup extends Component {
                 username={this.state.username}
                 usernameError={this.state.errors.username} //added
                 firstName={this.state.first_name}
+                firstNameError={this.state.errors.firstName}
                 lastName={this.state.last_name}
+                lastNameError={this.state.errors.lastName}
                 password={this.state.password}
                 passwordError={this.state.errors.password} //added
                 passwordConfirmation={this.state.password_confirmation}
-                passwordConfirmationError={this.state.errors.password_confirmation} //added
+                passwordConfirmationError={this.state.errors.passwordConfirmation} //added
                 handleOnChange={this.handleOnChange}
                 handleOnSubmit={this.handleOnSubmit}
             /> 

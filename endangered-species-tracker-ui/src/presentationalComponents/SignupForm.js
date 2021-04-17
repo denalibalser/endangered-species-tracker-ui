@@ -19,6 +19,7 @@ export const SignupForm = (props) => {
                             type="text"
                             autoComplete="off"
                         />
+                        <div className='errorMsg'>{props.usernameError}</div>
                     </div>
                     <div>
                         <label className="block mb-2 text-indigo-500" htmlFor="first_name">First Name</label>
@@ -30,6 +31,7 @@ export const SignupForm = (props) => {
                             type="text"
                             autoComplete="off"
                         />
+                        <div className='errorMsg'>{props.firstNameError}</div>
                     </div>
                     <div>
                         <label className="block mb-2 text-indigo-500" htmlFor="last_name">Last Name</label>
@@ -41,6 +43,7 @@ export const SignupForm = (props) => {
                             type="text"
                             autoComplete="off"
                         />
+                        <div className='errorMsg'>{props.lastNameError}</div>
                     </div>
                     <div>
                         <label className="block mb-2 text-indigo-500" htmlFor="password">Password</label>
@@ -49,9 +52,10 @@ export const SignupForm = (props) => {
                             name="password"
                             onChange={props.handleOnChange} 
                             value={props.password} 
-                            type="text"
+                            type="password"
                             autoComplete="off"
                         />
+                        <div className='errorMsg'>{props.passwordError}</div>
                     </div>
                     <div>
                         <label className="block mb-2 text-indigo-500" htmlFor="password_confirmation">Confirm Password</label>
@@ -60,9 +64,10 @@ export const SignupForm = (props) => {
                             name="password_confirmation"
                             onChange={props.handleOnChange} 
                             value={props.passwordConfirmation} 
-                            type="text"
+                            type="password"
                             autoComplete="off"
                         />
+                        <div className='errorMsg'>{props.passwordConfirmationError}</div>
                     </div>
                     <button className="btn" type="submit">Signup</button>            
                 </form>
