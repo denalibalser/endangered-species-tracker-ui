@@ -21,7 +21,9 @@ class Login extends Component {
     handleOnSubmit = event => {
         event.preventDefault();
         if(this.validateForm()) {
-            this.props.login(this.state, this.props.history)
+            const state = {...this.state};
+            delete state.errors;
+            this.props.login(state, this.props.history)
         } 
     }
 
@@ -46,6 +48,7 @@ class Login extends Component {
             this.props.loggedIn ? 
             <Redirect to="/dashboard"/> :
             <LoginForm 
+                errors={this.props.errors}
                 username={this.state.username}
                 usernameError={this.state.errors.username} 
                 password={this.state.password} 
@@ -59,7 +62,8 @@ class Login extends Component {
 
 const mapStateToProps = state => {
     return {
-        loggedIn: state.auth.loggedIn
+        loggedIn: state.auth.loggedIn,
+        errors: state.auth.errors
     }
 }
 

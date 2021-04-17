@@ -19,8 +19,8 @@ export const SignupForm = (props) => {
                             type="text"
                             autoComplete="off"
                         />
-                        <div className='errorMsg'>{props.usernameError}</div>
-                        <div className='errorMsg'>{props.error}</div>
+                        <div className='errorMsg text-red-600'>{props.usernameError}</div>
+                        <div className='errorMsg text-red-600'>{props.errors}</div>
                     </div>
                     <div>
                         <label className="block mb-2 text-indigo-500" htmlFor="first_name">First Name</label>
@@ -32,7 +32,7 @@ export const SignupForm = (props) => {
                             type="text"
                             autoComplete="off"
                         />
-                        <div className='errorMsg'>{props.firstNameError}</div>
+                        <div className='errorMsg text-red-600'>{props.firstNameError}</div>
                     </div>
                     <div>
                         <label className="block mb-2 text-indigo-500" htmlFor="last_name">Last Name</label>
@@ -44,7 +44,7 @@ export const SignupForm = (props) => {
                             type="text"
                             autoComplete="off"
                         />
-                        <div className='errorMsg'>{props.lastNameError}</div>
+                        <div className='errorMsg text-red-600'>{props.lastNameError}</div>
                     </div>
                     <div>
                         <label className="block mb-2 text-indigo-500" htmlFor="password">Password</label>
@@ -56,7 +56,7 @@ export const SignupForm = (props) => {
                             type="password"
                             autoComplete="off"
                         />
-                        <div className='errorMsg'>{props.passwordError}</div>
+                        <div className='errorMsg text-red-600'>{props.passwordError}</div>
                     </div>
                     <div>
                         <label className="block mb-2 text-indigo-500" htmlFor="password_confirmation">Confirm Password</label>
@@ -68,7 +68,7 @@ export const SignupForm = (props) => {
                             type="password"
                             autoComplete="off"
                         />
-                        <div className='errorMsg'>{props.passwordConfirmationError}</div>
+                        <div className='errorMsg text-red-600'>{props.passwordConfirmationError}</div>
                     </div>
                     <button className="btn" type="submit">Signup</button>            
                 </form>

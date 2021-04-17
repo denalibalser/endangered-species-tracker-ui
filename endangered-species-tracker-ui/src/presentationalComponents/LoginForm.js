@@ -20,7 +20,8 @@ export const LoginForm = (props) => {
                             type="text"
                             autoComplete="off"
                         />
-                        <div className='errorMsg'>{props.usernameError}</div> 
+                        <div className='errorMsg text-red-600'>{props.usernameError}</div> 
+                        <div className='errorMsg text-red-600'>{props.errors}</div>
                     </div>
                     <div>
                         <label className="block mb-2 text-indigo-500" htmlFor="password">Password</label>
@@ -34,7 +35,7 @@ export const LoginForm = (props) => {
                                 type="password"
                                 autoComplete="off"
                             />
-                            <div className='errorMsg'>{props.passwordError}</div> 
+                            <div className='errorMsg text-red-600'>{props.passwordError}</div> 
 
                         </div>
                     </div>  

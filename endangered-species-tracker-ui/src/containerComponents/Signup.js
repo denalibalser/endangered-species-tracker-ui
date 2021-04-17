@@ -36,7 +36,7 @@ class Signup extends Component {
 
         if(!this.state.username) {
           formIsValid = false
-          errors['username'] = '*Please enter your username'
+          errors['username'] = '*Please enter a username'
         }
         if(!this.state.first_name) {
             formIsValid = false
