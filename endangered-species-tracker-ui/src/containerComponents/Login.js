@@ -8,7 +8,8 @@ class Login extends Component {
 
     state = {
         username: '',
-        password: ''
+        password: '', 
+        errors: {}
     };
 
     handleOnChange = event => {
@@ -19,11 +20,25 @@ class Login extends Component {
 
     handleOnSubmit = event => {
         event.preventDefault();
-        this.props.login(this.state, this.props.history)
-        this.setState({
-            username: '',
-            password: ''
-        })
+        if(this.validateForm()) {
+            this.props.login(this.state, this.props.history)
+        } 
+    }
+
+    validateForm = () => {
+        let errors = {}
+        let formIsValid = true
+
+        if (!this.state.username) {
+          formIsValid = false
+          errors['username'] = '*Please enter your username'
+        }
+        if (!this.state.password) {
+            formIsValid = false
+            errors['password'] = '*Please enter your password'
+        }
+        this.setState({ errors })
+        return formIsValid
     }
 
     render() {
@@ -31,8 +46,10 @@ class Login extends Component {
             this.props.loggedIn ? 
             <Redirect to="/dashboard"/> :
             <LoginForm 
-                username={this.state.username} 
+                username={this.state.username}
+                usernameError={this.state.errors.username} 
                 password={this.state.password} 
+                passwordError={this.state.errors.password} 
                 handleOnSubmit={this.handleOnSubmit} 
                 handleOnChange={this.handleOnChange}
             />
