@@ -14,8 +14,9 @@ const SearchBar = (props) => {
                         className="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none"
                         type="text"
                         value={props.searchState.query}
+                        onInput={e => props.changeState(e)}
                         placeholder={"search endangered species"}
-                        onChange={(event) => props.changeState(event)}
+                        // onChange={(e) => props.changeState(e)}
                         autoComplete="off"
                     />  
                 </div>
