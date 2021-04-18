@@ -10,7 +10,9 @@ class SearchPage extends Component {
     }
     
     componentDidMount() {
-        this.props.fetchAllSpecies(); 
+        if(this.props.loggedIn === true) {
+            this.props.fetchAllSpecies(); 
+        } 
     }
 
     changeState = (event) => {
@@ -41,6 +43,7 @@ class SearchPage extends Component {
 
 const mapStateToProps = state => {
     return {
+        loggedIn: state.auth.loggedIn,
         allSpecies: state.species.endangeredSpecies,
         loadingAllSpecies: state.species.loading
     }
