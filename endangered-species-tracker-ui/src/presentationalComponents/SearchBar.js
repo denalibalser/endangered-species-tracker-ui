@@ -16,7 +16,6 @@ const SearchBar = (props) => {
                         value={props.searchState.query}
                         onInput={e => props.changeState(e)}
                         placeholder={"search endangered species"}
-                        // onChange={(e) => props.changeState(e)}
                         autoComplete="off"
                     />  
                 </div>

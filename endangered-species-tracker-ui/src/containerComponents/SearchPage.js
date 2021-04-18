@@ -14,12 +14,13 @@ class SearchPage extends Component {
     }
 
     changeState = (event) => {
-        const query = event.target.value
+        const query = event.target.value.toLowerCase()
+        const allSpecies = this.props.allSpecies
         this.setState({
-            filteredData: this.props.allSpecies.filter(species => {
+            filteredData: allSpecies.filter(species => {
                 if(query !== '') {
                     // return species[0].charAt(0).toLowerCase().includes(query.toLowerCase()) //need to figure out way to search by more than just first letter 
-                    return species[0].toLowerCase().includes(query.toLowerCase()) //need to figure out way to search by more than just first letter 
+                    return species[0].substring(0, 5).toLowerCase().indexOf(query) === 0
 
                 }
             })
