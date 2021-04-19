@@ -63,7 +63,7 @@ class Signup extends Component {
             this.props.loggedIn ? 
             <Redirect to="/dashboard"/> :
             <SignupForm 
-                errors={this.props.errors}
+                backendErrors={this.props.errors}
                 username={this.state.username}
                 usernameError={this.state.errors.username} 
                 firstName={this.state.first_name}
@@ -84,7 +84,7 @@ class Signup extends Component {
 const mapStateToProps = state => {
     return {
         loggedIn: state.auth.loggedIn,
-        errors: state.auth.errors
+        backendErrors: state.auth.errors
     }
 }
 
