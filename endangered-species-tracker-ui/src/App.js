@@ -11,7 +11,7 @@ import { Redirect } from 'react-router-dom';
 
 class App extends Component {
 
-  state = { //can move all of this loading logic to loading reducer so it can be reused
+  state = { 
     loading: true
   }
 
@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   render() {
-    if(this.state.loading){ return <h1>Loading...</h1>} //can pull in loading spinner library and render here
+    if(this.state.loading){ return <h1>Loading...</h1>} 
     return (
       <div className="App">
         <Router>
