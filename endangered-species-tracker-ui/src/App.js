@@ -8,6 +8,7 @@ import Navbar from './containerComponents/Navbar'
 import { checkLoggedIn } from './redux/actions/authActions'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom';
+import Error from './presentationalComponents/Error'
 
 class App extends Component {
 
@@ -48,7 +49,7 @@ class App extends Component {
             />
             <Route path="/signup" component={Signup} /> 
             <Route path="/login" component={Login} />
-
+            <Route component={Error} />
           </Switch>
         </Router>
       </div>
