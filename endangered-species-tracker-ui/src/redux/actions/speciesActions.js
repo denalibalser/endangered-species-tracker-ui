@@ -33,8 +33,6 @@ export const saveSpecies = (species) => {
                 payload: { speciesCard: respJSON.species_card },
             })
         })
-        
-
     }
 }
 
