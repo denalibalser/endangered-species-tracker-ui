@@ -17,7 +17,7 @@ I knew I wanted the theme of this project to be something I was passionate about
 ## Demo Video 
 [Link to Demo Video](https://www.youtube.com/watch?v=_mWfJzi4mDY&ab_channel=DenaliBalser)
 
-## Deployment Instructions :
+## Usage Instructions :
 * Clone this Repo & Backend Repo (provided above) 
 * Run 'cd endangered-species-tracker-ui'
 * Run 'yarn start'
