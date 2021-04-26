@@ -27,5 +27,20 @@ I knew I wanted the theme of this project to be something I was passionate about
 * Run 'bundle install'
 * Run 'rails s' 
 
+## Dependencies 
+* "@craco/craco": "^6.1.1"
+* "@testing-library/jest-dom": "^5.11.4"
+* "@testing-library/react": "^11.1.0"
+* "@testing-library/user-event": "^12.1.10"
+* "react": "^17.0.1"
+* "react-dom": "^17.0.1"
+* "react-redux": "^7.2.2"
+* "react-router-dom": "^5.2.0"
+* "react-scripts": "4.0.3"
+* "redux": "^4.0.5"
+* "redux-thunk": "^2.3.0"
+* "uuid": "^3.4.0"
+* "web-vitals": "^1.0.1"
+
 
 
