@@ -70,7 +70,9 @@ export const SignupForm = (props) => {
                         />
                         <div className='errorMsg text-red-600'>{props.passwordConfirmationError}</div>
                     </div>
-                    <button className="btn" type="submit">Signup</button>            
+                    <button className="w-full bg-indigo-700 hover:bg-pink-700 text-white font-medium py-3 px-4 mt-10 rounded focus:outline-none focus:shadow-outline" type="submit">
+                        Signup
+                    </button>            
                 </form>
             </div>
         </div>

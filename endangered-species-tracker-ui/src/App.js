@@ -10,6 +10,8 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import Error from './presentationalComponents/Error'
 
+//MAYBE ADD COMPONENTWILLUNMOUNT TO CLEAR STORE'S STATE WHEN USER LOGS OUT 
+
 class App extends Component {
 
   state = { 
@@ -55,7 +57,6 @@ class App extends Component {
       </div>
     );
   }
-
 }
 
 const mapStateToProps = state => {
